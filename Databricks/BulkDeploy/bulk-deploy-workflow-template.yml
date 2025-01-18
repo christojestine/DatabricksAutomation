@@ -21,7 +21,7 @@ steps:
 - task: PowerShell@2
   displayName: 'ONE_TIME_JOB deployment'
   inputs:
-    filePath: '$(Build.SourcesDirectory)/your_path/scripts/bulk-deploy-scripts.ps1'
+    filePath: '$(Build.SourcesDirectory)/your_path/scripts/bulk-deploy-script.ps1'
     arguments: |
       -folderPath '$(Build.SourcesDirectory)/${{ parameters.folderPath }}' -clusterId ${{ parameters.clusterId }} -permissionFolder '$(Build.SourcesDirectory)/your_path/configuration/higerEnvPermission.json'
   condition: and(succeeded(), eq('${{ parameters.folderPath }}', 'folderPath'))
